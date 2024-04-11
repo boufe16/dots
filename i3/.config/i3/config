@@ -225,11 +225,19 @@ assign [class="firefox"] $ws1
 #ws2 is on monitor left, also work ws
 assign [class="steam"] $ws2
 assign [class="heroic"] $ws2
+#for steam, make settings and friends window floating, causee they take an abnoxious amount of space
+#must use 'title' and not class since they all have the same class
+for_window [class="steam" title="Steam Settings"] floating enable
+#resize the friends list
+for_window [title="Friends List"] resize set 300 0
 
 #$ws3 is social/music, essentially 2nd monitor stuff or background apps will go in 3
 assign [class="TelegramDesktop"] $ws3 #removed this cause it was causing screen flickering
 assign [class="discord"] $ws3
 assign [class="Spotify"] $ws3
+#ms teams chrome app
+assign [class="TEAMS"] $ws3
+for_window [class="TEAMS"] move to workspace $ws3
 
 #ws4 for emacs/text editor (left monitor)
 assign [class="Emacs"] $ws4
@@ -272,7 +280,7 @@ for_window [class="steam_app_1778820"] move to workspace $ws11
 gaps inner 10
 
 #window style
-default_border normal 2
+default_border normal 1
 
 #nord stuff - 
 set_from_resource $bg-color	       i3wm.color6
