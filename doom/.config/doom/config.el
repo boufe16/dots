@@ -42,8 +42,16 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+;; Add my Org agenda here
+;;
+(after! org
+  (setq org-agenda-files '("~/org/journal/")))
 
-
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/org/journal/global.org" "Todo")
+         "* TODO %?\n  %i\n  %a")
+        ("a" "Appointment" entry (file+datetree "~/org/journal/global.org")
+         "* %?\nEntered on %U\n  %i\n  %a")))
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
@@ -84,8 +92,3 @@
   (evil-ex-define-cmd "q" 'kill-this-buffer)
   (evil-ex-define-cmd "wq" 'doom/save-and-kill-buffer)
 )
-
-;; Add my Org agenda here
-;;
-(after! org
-  (setq org-agenda-files '("~/journal/")))
