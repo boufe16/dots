@@ -216,6 +216,10 @@ bindsym XF86AudioNext exec playerctl next
 #start the polybar module thing
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+
+#force i3 border window on all:
+for_window [all] border normal
+
 #start these apps in specific workspaces 
 #classname comes from xprop -> wm_class
 
@@ -227,9 +231,10 @@ assign [class="steam"] $ws2
 assign [class="heroic"] $ws2
 #for steam, make settings and friends window floating, causee they take an abnoxious amount of space
 #must use 'title' and not class since they all have the same class
-for_window [class="steam" title="Steam Settings"] floating enable
+for_window [instance="steam" title="Steam Settings"] floating enable
 #resize the friends list
-for_window [title="Friends List"] resize set 300 0
+for_window [instance="steam" title="Friends List"] resize set 300 0
+for_window [class="^Steam$" title="^Friends$"] floating enable
 
 #$ws3 is social/music, essentially 2nd monitor stuff or background apps will go in 3
 assign [class="TelegramDesktop"] $ws3 #removed this cause it was causing screen flickering
