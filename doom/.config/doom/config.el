@@ -42,6 +42,10 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+;; ‘bookmark-save-flag’ to 1, each command that
+;; The variable ‘bookmark-default-file’ specifies the file in which to save
+(setq bookmark-save-flag 1)
+(setq bookmark-default-file "~/org/.bookmarks")
 ;; Add my Org agenda here
 ;;
 (after! org
@@ -52,6 +56,8 @@
          "* TODO %?\n  %i\n  %a")
         ("a" "Appointment" entry (file+datetree "~/org/journal/global.org")
          "* %?\nEntered on %U\n  %i\n  %a")))
+
+;;
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;

@@ -71,7 +71,3 @@ URxvt.scrollStyle: plain
 URxvt.scrollBar: false
 URxvt.iso14755: false
 URxvt.iso14755_52: false
-
-!! set default font for emacs, otherwise it cant find xft fonts
-!! I reset this in ~/.confg/doom/init.el anyway
-!!emacs.font: *-fixed-*-*-*-18-*
