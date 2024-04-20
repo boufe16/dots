@@ -57,6 +57,12 @@
         ("a" "Appointment" entry (file+datetree "~/org/journal/global.org")
          "* %?\nEntered on %U\n  %i\n  %a")))
 
+
+;;WORKSPACES:
+;;should make it so opening a new emacs client instance opens in main
+;;can set rules for the other perspectives if I end up using
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override "main"))
 ;;
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
