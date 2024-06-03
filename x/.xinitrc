@@ -51,7 +51,7 @@ fi
 twm &
 #exec xterm -geometry 80x66+0+0 -name login
 #set refresh rate on main monitor: 
-xrandr --output DP-0 --mode 1920x1080 --rate 239.76 --primary --right-of DP-4
+xrandr --output DP-0 --mode 1920x1080 --rate 239.76 --primary --left-of DP-4
 xrandr --output DP-4 --mode 2560x1440 --rate 144.00 
 
 #set wallpaper with feh 

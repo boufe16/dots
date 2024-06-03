@@ -124,7 +124,7 @@ set $ws4 "4:DOOM"
 set $ws5 "5:󰢹"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8"
+set $ws8 "8:󰊻"
 set $ws9 "9:󰑋"
 set $ws10 "10"
 set $ws11 "11:(F1)󱎓"
@@ -134,6 +134,7 @@ set $ws11 "11:(F1)󱎓"
 workspace $ws1 output DP-4
 workspace $ws3 output DP-4
 workspace $ws4 output DP-4
+workspace $ws8 output DP-4
 workspace $ws9 output DP-4
 
 # MONTIOR RIGHT DP-0
@@ -236,13 +237,25 @@ for_window [instance="steam" title="Steam Settings"] floating enable
 for_window [instance="steam" title="Friends List"] resize set 300 0
 for_window [class="^Steam$" title="^Friends$"] floating enable
 
+#more gaming stuff
+assign [class="Lutris"] $ws2
+#launchers
+assign [class="upc.exe"] $ws2
+assign [class="epicgameslauncher.exe"] $ws2
+
 #$ws3 is social/music, essentially 2nd monitor stuff or background apps will go in 3
 assign [class="TelegramDesktop"] $ws3 #removed this cause it was causing screen flickering
 assign [class="discord"] $ws3
 assign [class="Spotify"] $ws3
+
+
+#ws 8 is basically ws3 but for work, teams, chromium, what have you
 #ms teams chrome app
-assign [class="TEAMS"] $ws3
-for_window [class="TEAMS"] move to workspace $ws3
+#this says "TEAMS" but really its chromium I just changed the classname
+assign [class="TEAMS"] $ws8
+assign [class="chromium"] $ws8
+for_window [class="TEAMS"] move to workspace $ws8
+for_window [class="chromium"] move to workspace $ws8
 
 #ws4 for emacs/text editor (left monitor)
 assign [class="Emacs"] $ws4
@@ -280,6 +293,8 @@ assign [class="rocketleague.exe"] $ws11
 assign [class="steam_app_1778820"] $ws11
 for_window [class="steam_app_1778820"] move to workspace $ws11
 
+#xdefiant
+assign [class="xdefiant.exe"] $ws11
 
 #gaps configuration:
 gaps inner 10
